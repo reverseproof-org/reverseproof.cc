@@ -1,0 +1,20 @@
+name: Trigger worker deploy using wrangler
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose an environment to deploy to: <dev|staging|prod>"
+        required: true
+        default: "dev"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish app
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          command: publish --env ${{ github.event.inputs.environment }}
