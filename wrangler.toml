@@ -1,4 +1,4 @@
-name = "reverseproof.cc worker"
+name = "reverseproof.cc-worker"
 
 workers_dev = true
 main = "./build/index.js"
