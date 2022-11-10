@@ -1,7 +1,7 @@
 name = "reverseproof-worker"
 
 workers_dev = false
-route = { pattern = "reverseproof.cc/*", zone_name = "reverseproof.cc", custom_domain = true }
+route = { pattern = "reverseproof.cc", custom_domain = true }
 
 main = "./build/index.js"
 # https://developers.cloudflare.com/workers/platform/compatibility-dates
