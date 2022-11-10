@@ -25,6 +25,9 @@ jobs:
 
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
+      
+      - name: add env vars
+        run: echo SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}\nSUPABASE_URL=${{ secrets.SUPABASE_URL }}
 
       - name: Publish
         run: npx wrangler publish
